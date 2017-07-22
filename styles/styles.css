@@ -1,0 +1,68 @@
+@import url('http://getbootstrap.com/dist/css/bootstrap.css');
+
+#pad{
+	padding: 0px 25px 0px 25px;
+}
+#header{
+	height:75px;
+}
+
+#side-heading{
+	background-color:#E82F3A;
+	width:100%; 
+	height:200px;
+	font-size: 50px;
+	font-family:Helvetica;
+	color:white;
+	text-align:center;
+	padding:50px;
+}
+.btn-danger{ 
+  color: #FFFFFF; 
+  background-color: #E82F3A; 
+  border-color: #E82F3A; 
+} 
+ 
+.btn-sample:hover, 
+.btn-sample:focus, 
+.btn-sample:active, 
+.btn-sample.active, 
+.open .dropdown-toggle.btn-sample { 
+  color: #FFFFFF; 
+  background-color: #E82F3A; 
+  border-color: #E82F3A; 
+} 
+ 
+.btn-sample:active, 
+.btn-sample.active, 
+.open .dropdown-toggle.btn-sample { 
+  background-image: none; 
+} 
+ 
+.btn-sample.disabled, 
+.btn-sample[disabled], 
+fieldset[disabled] .btn-sample, 
+.btn-sample.disabled:hover, 
+.btn-sample[disabled]:hover, 
+fieldset[disabled] .btn-sample:hover, 
+.btn-sample.disabled:focus, 
+.btn-sample[disabled]:focus, 
+fieldset[disabled] .btn-sample:focus, 
+.btn-sample.disabled:active, 
+.btn-sample[disabled]:active, 
+fieldset[disabled] .btn-sample:active, 
+.btn-sample.disabled.active, 
+.btn-sample[disabled].active, 
+fieldset[disabled] .btn-sample.active { 
+  background-color: #E82F3A; 
+  border-color: #E82F3A; 
+} 
+ 
+.btn-sample .badge { 
+  color: #E82F3A; 
+  background-color: #FFFFFF; 
+}
+.form-control:focus {
+  border-color: #E82F3A;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(255, 0, 0, 0.6);
+}

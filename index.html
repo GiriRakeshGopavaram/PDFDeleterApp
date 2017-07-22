@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	 <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="styles/styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-validator/0.5.3/css/bootstrapValidator.min.css">
+
+  <!-- jQuery library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+  <!-- Latest compiled JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-validator/0.5.3/js/bootstrapValidator.min.js"></script>
+  
+</head> 
+<body id="pad">
+	<div id="header">
+		<h3 style="color: #E82F3A;font-famliy: Helvetica;">T R A N S F O R M E R S</h3>
+	</div>
+	<div id="side-heading">Delete PDF pages on the go!</div>
+		
+<br>
+    
+<form action="upload.php"  onsubmit="return validateForm()" name = "upload" method="post" enctype="multipart/form-data" class="form-horizontal">
+   <div class="">
+   <div class="form-group">
+      <label class="control-label col-sm-4" >Select file:</label>
+      <input type="file" style="padding-left:15px" id="files" name="file" />
+      <div style="padding-top:10px;padding-left:462px"><label id="fileMessage" class="alert alert-danger alert-dismissable" style="padding-top: 10px" hidden></div>
+    </div>
+
+   <div class="form-group">
+      <label class="control-label col-sm-4" for="pwd">Enter page numbers:</label>
+      <div class="col-sm-4">          
+        <input type="text" class="form-control" id="pageNumbers" placeholder="1,2,3" name="pageNumbers"><br>
+        <label id="message" class="alert alert-danger alert-dismissable" hidden>
+      </div>
+   </div>
+<div class="form-group">        
+      <div class="col-sm-offset-4 col-sm-6">
+        <button type="submit" name="submit" class="btn btn-danger">Transform</button>
+      </div>
+    </div>
+</div>
+</form>
+<script>
+function validateForm() {
+   var files = $("#files").val();
+    if(files.length == 0 ){
+      var error = $("#fileMessage");
+      error.html("Please upload a file");
+      error.removeAttr('hidden');
+      return false;
+    }
+    var pageNumbers = $("#pageNumbers").val();
+    var array = pageNumbers.split(",");
+    array.sort();
+    if(array.length === 1 && array[0] === ""){
+      var error = $("#message");
+      error.html("Please enter a number");
+      error.removeAttr('hidden');
+      return false;
+    }else{
+      var pattern = RegExp("^\\d");
+      for(var ch in array){
+        console.log(array[ch]);
+        if(pattern.test(array[ch]) == false){
+          console.log(ch);
+          var error = $("#message");
+          error.html("Please enter numbers seperated by commas");
+          error.removeAttr('hidden');
+          return false;
+        }
+      }
+      return true;
+    }
+}
+</script>
+</body>
+</html>
